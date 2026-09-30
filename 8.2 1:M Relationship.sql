@@ -1,6 +1,6 @@
 ## 1:M Relationship
 
-step 1 : Create 2 Tables
+-- step 1 : Create 2 Tables
 
 create table students (
 student_id serial primary key,
@@ -33,6 +33,7 @@ values
 (3, 'Math', 70),
 (3, 'Science', 74);
 
+/*
 now we have just created the table with data.
 now will have to study about join and use it to connect the tables.
 few questions to solve after learning about join
@@ -41,8 +42,10 @@ few questions to solve after learning about join
 3. Show only those subjects where marks are above 80.
 4. Sort all students' subject marks in descending order of marks.
 5. Show each student's average marks.
+*/
 
 -- Join
+/*
 Joins are used to combine rows from two or more tables based on a related column, usually a primary key in one table and a foreign key in another.
 Think of JOINS as a bridge between two tables that lets you query them together.
 Example Scenario:
@@ -57,13 +60,13 @@ Using join, we can get:
 | RIGHT JOIN | Returns all rows from the right table, even if there's no match in the left table. |
 | FULL JOIN  | Returns all rows from both tables, filling `NULL` for missing matches.             |
 | CROSS JOIN | Returns the Cartesian product (every possible combination of rows).                |
-
+*/
 
 # Inner Join
-syntax:
+-- syntax:
 select columns from table1 join table2
 on table1.common_column = table2.common_column;
-eg of similar thing: 
+-- eg of similar thing: 
 select * from students join marks
 on students.student_id = marks.student_id;
 
@@ -73,14 +76,14 @@ on students.student_id = marks.student_id;
 select s.name,m.subject,m.marks from students s join marks m
 on s.student_id = m.student_id;
 
-1. Show each student's name along with their subject and marks.
+## 1. Show each student's name along with their subject and marks.
 select students.name,marks.subject,marks.marks from students join marks
 on students.student_id = marks.student_id;
 (or)
 select s.name,m.subject,m.marks from students s join marks m
 on s.student_id = m.student_id;
 
-2. Show marks for only "Ayush Chatterjee" in all subjects.
+## 2. Show marks for only "Ayush Chatterjee" in all subjects.
 select students.name,marks.subject,marks.marks
 from students join marks
 on students.student_id = marks.student_id
@@ -91,13 +94,13 @@ from students s join marks m
 on s.student_id = m.student_id
 where name = 'Ayush Chatterjee';
 
-3. Show only those subjects where marks are above 80.
+## 3. Show only those subjects where marks are above 80.
 select s.name,m.subject,m.marks
 from students s join marks m
 on s.student_id = m.student_id
 where marks>80;
 
-4. Sort all students' subject marks in descending order of marks.
+## 4. Sort all students' subject marks in descending order of marks.
 select s.name,m.subject,m.marks
 from students s join marks m
 on s.student_id = m.student_id

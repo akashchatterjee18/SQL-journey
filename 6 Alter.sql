@@ -1,4 +1,4 @@
-## Alter 
+-- Alter
 
 create table students(
 student_id serial primary key,
@@ -12,53 +12,76 @@ values
 ('Ayush',10);
 
 
-1. Add new columns
-syntax :
+-- 1. Add new columns
+
+-- syntax :
 alter table table_name add column column_name datatype;
-eg :
+
+-- eg :
 alter table students add column email varchar(100);
 
 
-2. Remove columns
-syntax :
+-- 2. Remove columns
+
+-- syntax :
 alter table table_name drop column column_name;
-eg :
+
+-- eg :
 alter table students drop column email;
 
-3. Rename columns
-syntax :
+
+-- 3. Rename columns
+
+-- syntax :
 alter table table_name rename column column_name to new_name;
-eg :
+
+-- eg :
 alter table students rename column name to full_name;
 
-4. Change data types
-syntax :
+
+-- 4. Change data types
+
+-- syntax :
 alter table table_name alter column column_name type datatype;
-eg :
+
+-- eg :
 alter table students alter column age type smallint;
 
-5. Set or remove default values
-set syntax :
+
+-- 5. Set or remove default values
+
+-- set syntax :
 alter table table_name alter column column_name set default value;
-eg :
+
+-- eg :
 alter table students alter column age set default 18;
-drop syntax :
+
+-- drop syntax :
 alter table table_name alter column column_name drop default;
-eg :
+
+-- eg :
 alter table students alter column age drop default;
 
-6. Add or remove constraints
-add syntax :
+
+-- 6. Add or remove constraints
+
+-- add syntax :
 alter table table_name add constraint constraint_name constraint_type (column_name);
-eg :
+
+-- eg :
 alter table students add constraint age_check check (age>=0);
-drop syntax :
+
+-- drop syntax :
 alter table table_name drop constraint constraint_name;
-eg :
+
+-- eg :
 alter table students drop constraint age_check;
 
-7. Rename the table
-syntax: 
+
+-- 7. Rename the table
+
+-- syntax:
 alter table table_name rename to new_table_name;
-eg : 
+
+-- eg:
 alter table students rename to clg_students;

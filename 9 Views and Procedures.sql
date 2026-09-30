@@ -1,4 +1,5 @@
-## Views
+# Views
+/*
 A view is a virtual table based on a SQL query.
 It does not store actual data, but shows results when accessed – just like a saved query.
 
@@ -8,6 +9,7 @@ Use of views :
 -- Expose only selected columns instead of giving full access to the table. 
 -- Hide table complexity for front-end/dashboard users.                     
 -- If logic changes, update the view; changes reflect everywhere.           
+*/
 
 creating view syntax :
 create view view_name as
@@ -15,16 +17,16 @@ select column1, column2, ...
 from table_name
 where condition;
 
-eg :
+-- eg :
 create view fitness_products as
 select product_id,name,price,stock_quantity from products
 where category = 'Fitness';
 
-viewing a view :
+-- viewing a view :
 select * from fitness_products;
 
-now lets create another view :
-Create a View for Low Stock Products:
+-- now lets create another view :
+-- Create a View for Low Stock Products:
 
 create view low_stock_products as
 select name, category, stock_quantity
@@ -33,13 +35,14 @@ where stock_quantity < 30;
 
 select * from low_stock_products;
 
-deleting a view:
+-- deleting a view:
 drop view view_name;
 
 
 ## Procedures
--- A procedure is a block of SQL code that performs a series of operations like inserting, updating, deleting, or selecting data—and is stored in the database.
--- Think of it like a function in programming—once defined, you can call it again and again without rewriting the logic.
+/*
+A procedure is a block of SQL code that performs a series of operations like inserting, updating, deleting, or selecting data—and is stored in the database.
+Think of it like a function in programming—once defined, you can call it again and again without rewriting the logic.
 
 | Benefit                   | Explanation                                                                    |
 | ------------------------- | ------------------------------------------------------------------------------ |
@@ -48,7 +51,7 @@ drop view view_name;
 | **Faster Execution**      | Compiled and stored on the DB server.                                          |
 | **Encapsulation**         | Hide complex logic in one callable block.                                      |
 | **Multi-step Operations** | Perform multiple queries like insert + update + log creation in one procedure. |
-
+*/
 creating a procedure syntax :
 create procedure procedure_name(parameter1 datatype,
 parameter2 datatype,...)

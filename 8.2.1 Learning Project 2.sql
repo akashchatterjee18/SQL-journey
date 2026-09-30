@@ -21,52 +21,52 @@ create table orders (
 		on delete cascade
 );
 
-on delete cascade refers to deletion of data from one table if it is deleted from another table.
+-- on delete cascade refers to deletion of data from one table if it is deleted from another table.
 
-now the data is imported using csv files. the data would be uploaded seperatedly
+-- now the data is imported using csv files. the data would be uploaded seperatedly
 
-Q1. Show each order along with the product name and price.
+## Q1. Show each order along with the product name and price.
 select o.order_id, o.customer_name,p.product_name,p.price
 from products p inner join orders o
 on o.product_id = p.product_id;
 
-Q2. Show all products even if they were never ordered.
+## Q2. Show all products even if they were never ordered.
 select o.order_id,p.product_name 
 from products p left join orders o
 on o.product_id = p.product_id;
 
-Q3. Show orders for only ‘Electronics’ category.
+## Q3. Show orders for only ‘Electronics’ category.
 select o.order_id,p.product_name,p.category
 from products p join orders o
 on o.product_id = p.product_id
 where category = 'Electronics';
 
-Q4. List all orders sorted by product price (high to low).
+## Q4. List all orders sorted by product price (high to low).
 select o.order_id,p.product_name,p.price
 from products p join orders o
 on o.product_id = p.product_id
 order by price desc;
 
-Q5. Show number of orders placed for each product.
+## Q5. Show number of orders placed for each product.
 select p.product_name,count(o.order_id) as total_orders
 from products p left join orders o
 on o.product_id = p.product_id
 group by product_name;
 
-Q6. Show total revenue earned per product.
+## Q6. Show total revenue earned per product.
 select p.product_name,sum(o.quantity*p.price) as revenue_per_product
 from products p join orders o
 on o.product_id = p.product_id
 group by product_name;
 
-Q7. Show products where total order revenue > ₹2000.
+## Q7. Show products where total order revenue > ₹2000.
 select p.product_name,sum(o.quantity*p.price) as revenue_per_product
 from products p join orders o
 on o.product_id = p.product_id
 group by product_name
 having sum(o.quantity*p.price)>2000;
 
-Q8. Show unique customers who ordered ‘Fitness’ products.
+## Q8. Show unique customers who ordered ‘Fitness’ products.
 select distinct o.customer_name
 from products p join orders o
 on o.product_id = p.product_id

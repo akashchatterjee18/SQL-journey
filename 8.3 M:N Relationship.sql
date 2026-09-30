@@ -23,7 +23,7 @@ values
 (102, 'SQL'),
 (103, 'Power BI');
 
-- Junction table
+-- Junction table
 create table student_courses (
     student_id int,
     course_id int,
@@ -43,7 +43,7 @@ values
 (2, 103),
 (3, 102);
 
-1. Show the list of students with the courses they are enrolled in.
+## 1. Show the list of students with the courses they are enrolled in.
 select 
 s.student_name,
 c.course_name
@@ -52,7 +52,7 @@ student_courses sc join students s on sc.student_id = s.student_id
 join courses c on sc.course_id = c.course_id
 ;
 
-2. Find all the courses taken by the student named 'Ayush'.
+## 2. Find all the courses taken by the student named 'Ayush'.
 select
 c.course_name
 from

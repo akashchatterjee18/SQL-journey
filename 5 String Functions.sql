@@ -1,0 +1,135 @@
+## String Functions
+
+/*
+String functions in PostgreSQL are used to manipulate text data like names,
+categories, SKUs, etc.
+
+They help us:
+- Clean text
+- Extract parts of a string
+- Convert cases
+- Replace or remove characters
+
+Examples are used from learning project 1.
+*/
+
+
+# upper(), lower() and length() function
+
+select upper(name) from products;
+select lower(name) from products;
+select length(name) from products;
+
+/*
+Here upper() or lower() function or length() are examples of string function.
+
+upper() makes all the letters / strings uppercase.
+lower() makes all the letters / strings lowercase.
+length() returns the number of characters in the selected column.
+*/
+
+
+# Substring
+
+/*
+It is used to extract a portion of a string.
+
+Syntax:
+substring(text, location, length)
+*/
+
+-- eg1:
+select name, substring(sku_code, 1, 2) from products;
+
+/*
+eg of the concept:
+
+substring('Brother in arms', 1, 2)
+
+Here, 1 is the starting location and 2 is the length.
+
+So the output will be:
+Br
+*/
+
+-- eg2:
+substring('Brother in arms', 1, 7);
+
+/*
+Brother
+*/
+
+-- eg3:
+substring('Brother in arms', 12, 4);
+
+/*
+arms
+*/
+
+-- SQL statement:
+select substring('Brother in arms', 12, 4);
+
+-- using multiple functions together:
+select lower(substring(sku_code, 1, 2)) from products;
+
+
+# left() and right() function
+
+/*
+Both have the use case similar to substring().
+Returns the leftmost or rightmost n characters of a string.
+*/
+
+select left(sku_code, 2) from products;
+select left('Brother in arms', 7);
+
+/*
+Same working with right(), it just gets the element from the right.
+*/
+
+select right(sku_code, 2) from products;
+select right('Brother in arms', 4);
+
+
+## Concat Functions
+
+/*
+concat() joins 2 strings together.
+
+There are 2 concat functions.
+*/
+
+select concat(name, ' ', category) from products;
+select concat_ws(':', name, category) from products;
+
+/*
+We use concat_ws() (ws = with separator) to concatenate multiple columns
+using a separator.
+
+It automatically inserts the separator between the values.
+*/
+
+
+## trim() and replace() functions
+
+/*
+trim() - this function removes leading and trailing spaces from a string.
+
+replace() - this function replaces any text you want with another value.
+*/
+
+select replace(sku_code, left(sku_code, 2), 'GG') from products;
+
+select replace('postgresql', 'sql', 'database');
+
+/*
+output:
+postgredatabase
+*/
+
+select trim('   hello world   ');
+
+/*
+output:
+hello world
+*/

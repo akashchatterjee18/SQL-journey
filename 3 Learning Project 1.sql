@@ -1,5 +1,5 @@
 ## Problem
-
+/*
 Create a Database named Flipkart_db and then create a table with:
 Product ID - Serial
 name - String
@@ -10,7 +10,7 @@ Is available default true - Boolean
 Category not null - String
 Added_on - Date
 Last_update - Timestamp
-
+*/
 
 ## Solution
 

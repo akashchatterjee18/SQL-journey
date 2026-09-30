@@ -64,8 +64,8 @@ $$;
 
 call procedure_name(value1,value2);
 
-# create a procedure for adding new product in database
-create procedure add_product(
+## create a procedure for adding new product in database
+## create procedure add_product(
 p_name varchar,
 p_sku char(8),
 p_price numeric,

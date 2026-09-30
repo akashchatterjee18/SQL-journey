@@ -1,12 +1,16 @@
-# creating database
+# Creating Database
 create database database_name;
 
-# connecting to database
-\c database_name 
-"NOTE :  since \c is a psql command, not SQL, so it doesn't require a semicolon."
+# Connecting to Database
+\c database_name
+
+/*
+NOTE : Since \c is a psql command, not SQL,
+it doesn't require a semicolon.
+*/
 
 
-# creating table
+# Creating Table
 create table table_name (
     column1 datatype constraints,
     column2 datatype constraints,
@@ -14,30 +18,42 @@ create table table_name (
     ...
 );
 
-# inserting values into all columns (in table order)
+
+# Inserting Values into All Columns (in table order)
 insert into table_name 
 values
 (value1, value2, value3, ...);
 
-# inserting values into selected columns
+
+# Inserting Values into Selected Columns
 insert into table_name (column1, column2, column3, ...)
 values
 (value1, value2, value3, ...);
 
-# to view all data from table
+
+# To View All Data from Table
 select * from table_name;
 
-# to view particular column data from table
+
+# To View Particular Column Data from Table
 select column1, column2, ... from table_name;
 
-# to view all data from table with conditions
-select * from table_name where condition1 and/or/not condition2 and/or/not condition3 ...;
 
-# to view particular column data from table with conditions
-select column1, column2, ... from table_name where condition1 and/or/not condition2 and/or/not condition3 ...;
+# To View All Data from Table with Conditions
+select * from table_name
+where condition1 and/or/not condition2 and/or/not condition3 ...;
 
-# update data in table
-update table_name set column1 = value1, column2 = value2, ... where condition1 and/or/not condition2 and/or/not condition3 ...;
 
-# delete data(rows) from table
+# To View Particular Column Data from Table with Conditions
+select column1, column2, ... from table_name
+where condition1 and/or/not condition2 and/or/not condition3 ...;
+
+
+# Update Data in Table
+update table_name
+set column1 = value1, column2 = value2, ...
+where condition1 and/or/not condition2 and/or/not condition3 ...;
+
+
+# Delete Data (Rows) from Table
 delete from table_name where condition;

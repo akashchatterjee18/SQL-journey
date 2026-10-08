@@ -172,3 +172,60 @@ As the **volume and complexity of data increased**, traditional filesystems and 
 | **Persistence** | Data processed using in-memory structures remains in memory and must be **manually written back** to the file after updates. | Data persistence is ensured through **automatic system mechanisms**, reducing the risk of data loss due to manual errors. |
 | **Robustness** | Consistency, reliability, and data integrity must be ensured **manually through multiple checks**. A system crash may cause inconsistency or data loss. | **Backup, recovery, and restore** require minimal manual intervention. Automatic recovery can be configured for system crashes. |
 | **Security** | Granular security is extremely difficult to implement in file systems. Authentication is generally handled at the **OS level**. | DBMS provides **user-specific access control at the database level**, allowing restrictions on who can view or access data. |
+---
+
+# Introduction to DBMS
+
+## Levels of Data Abstraction
+
+DBMS provides **3 levels of data abstraction** to hide unnecessary details and simplify data access:
+
+1. **Physical Level (Internal Level)** – Describes **how data is actually stored**, including files, indexes, and storage structures.
+
+2. **Logical Level (Conceptual Level)** – Describes **what data is stored and the relationships among the data**, including tables, attributes, and constraints.
+
+3. **View Level (External Level)** – Describes **what a particular user can see**, showing only the required portion of the database.
+
+### Easy to Remember
+
+**Physical → Logical → View**
+
+> **How data is stored → What data exists → What the user sees**
+
+## Schema
+
+A **schema** is the overall structure or design of a database. It describes how the data is organised.
+
+### Types of Schema
+- **Logical Schema** – Describes the **overall logical structure** of the database.
+  - Similar to the **type information of a variable** in a program.
+  - Defines the data and relationships between different entities.
+  - Example: A banking database may contain information about **customers and their accounts**, along with the relationship between them.
+  - **Customer Schema:** `Name, Customer ID, Account#, Aadhaar ID, Mobile#`
+  - **Account Schema:** `Account#, Account Type, Interest Rate, Minimum Balance, Balance`
+
+- **Physical Schema** – Describes the **overall physical structure** of the database, i.e., how the data is actually stored.
+
+## Instance
+
+An **instance** is the **actual content of a database at a particular point in time**. It is analogous to the **value of a variable** in a program.
+
+- **Customer Instance** – Contains the actual customer records at a particular point in time.
+
+| Name | Customer ID | Account# | Aadhaar ID | Mobile# |
+|---|---:|---:|---:|---:|
+| Pavan Laha | 6728 | 917322 | 182719289372 | 9830100291 |
+| Lata Kala | 8912 | 827183 | 918291204829 | 7189203928 |
+| Nand Prabhu | 6617 | 372912 | 127837291021 | 8892021892 |
+
+- **Account Instance** – Contains the actual account records at a particular point in time.
+
+| Account# | Account Type | Interest Rate | Min. Bal. | Balance |
+|---:|---|---:|---:|---:|
+| 917322 | Savings | 4.0% | 5000 | 7812 |
+| 372912 | Current | 0.0% | 0 | 291820 |
+| 827183 | Term Deposit | 6.75% | 10000 | 100000 |
+
+> **Easy to remember:**  
+> **Schema = Structure of the database**  
+> **Instance = Actual data at a particular point in time**

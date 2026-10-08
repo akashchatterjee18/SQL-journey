@@ -130,7 +130,7 @@ As the **volume and complexity of data increased**, traditional filesystems and 
 
 ---
 
-## Case Study: A Bank Transaction
+# Case Study: A Bank Transaction
 
 ### Banking Transaction System
 

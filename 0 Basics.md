@@ -80,3 +80,18 @@ The effectiveness of electronic data management depends on several important par
 | **Consistency** | Spreadsheets are **less prone to errors** than physical registers, although consistency is not guaranteed. |
 
 > **Key Point:** Spreadsheet files significantly improved data management compared to physical registers, but they are **mostly suitable for single users or small enterprises** and become less effective for large-scale, multi-user data management.
+
+## Why Move Beyond Filesystems?
+
+As the **volume and complexity of data increased**, traditional filesystems and spreadsheet-based approaches became inefficient and difficult to manage.
+
+### Limitations of Filesystems
+
+- **Low Efficiency:** As data grows, the time required to perform most operations increases significantly.
+- **Limited Capacity:** Spreadsheet files may have an **upper limit on the number of rows** they can store.
+- **Data Consistency:** Maintaining consistent and accurate data becomes difficult.
+- **Concurrent Processing:** There is no effective mechanism to **detect or prevent constraint violations** when multiple users process data simultaneously.
+- **Limited Access Control:** It is difficult to centrally assign **different permissions to different users**.
+- **System Failure:** A system crash can result in **significant or catastrophic data loss**.
+
+> **Key Point:** These limitations created the need for a comprehensive platform specifically designed to manage data, leading to the development of **Database Management Systems (DBMS)**.

@@ -455,7 +455,7 @@ To remove the redundancy, the relation can be divided into two relations:
 - **Query Processing**
 - **Transaction Manager**
 
-## Storage Management
+### Storage Management
 
 - **Storage Manager**
   - A program module that provides the interface between the **low-level data stored in the database** and the **application programs and queries** submitted to the system.
@@ -469,31 +469,56 @@ To remove the redundancy, the relation can be divided into two relations:
   - File organization
   - Indexing and hashing
  
-  ## Query Processing
+### Query Processing
 
 Query processing consists of three main steps:
 
-### a) Parsing and Translation
+a) Parsing and Translation
 
 - The **query** is parsed and translated into a **relational-algebra expression**.
 
-### b) Optimization
+b) Optimization
 
 - The relational-algebra expression is analysed and an efficient **execution plan** is generated.
 - The optimizer uses **statistics about the data** to choose the best execution plan.
 
-### c) Evaluation
+c) Evaluation
 
 - The **execution plan** is executed by the **evaluation engine**.
 - The evaluation engine accesses the **data** and produces the **query output**.
 
 <img width="473" height="265" alt="image" src="https://github.com/user-attachments/assets/f00a1722-76d6-4f1f-9151-f37d7dc109ef" />
 
+- There are **alternative ways of evaluating a given query**:
+  - **Equivalent expressions**
+  - **Different algorithms** for each operation
 
+- The **cost difference** between a good and a bad way of evaluating a query can be **enormous**.
 
+- Therefore, there is a need to **estimate the cost of operations**.
+  - This depends critically on **statistical information about relations** that the database must maintain.
+  - The database also needs to estimate **statistics for intermediate results** to compute the cost of complex expressions.
 
+### Transaction Management
 
+- What if the **system fails**?
+- What if **more than one user concurrently updates the same data**?
 
+- A **transaction** is a collection of operations that performs a **single logical function** in a database application.
+
+- **Transaction-management component** ensures that the database remains in a **consistent (correct) state** despite **system failures** (e.g., power failures and operating system crashes) and **transaction failures**.
+
+- **Concurrency-control manager** controls the interaction among **concurrent transactions** to ensure the **consistency of the database**.
+
+## Database Architecture
+
+The architecture of a database system is greatly influenced by the **underlying computer system** on which the database is running.
+
+- **Centralized**
+- **Client-server**
+- **Parallel (multi-processor)**
+- **Distributed**
+- **Cloud**
 
 
 

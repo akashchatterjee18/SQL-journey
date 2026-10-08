@@ -127,3 +127,19 @@ As the **volume and complexity of data increased**, traditional filesystems and 
 
 ### Late 2000s
 - Emergence of **large-scale data storage systems**, including systems such as **Google BigTable, Yahoo PNuts, and Amazon's large-scale storage technologies**.
+
+
+## Comparison: File Handling via Python vs DBMS
+
+| **Parameter** | **File Handling via Python or any other language** | **DBMS** |
+|---|---|---|
+| **Scalability with respect to amount of data** | Very difficult to handle **insertion, updating, and querying** of large amounts of data. | Built-in features provide **high scalability** for large volumes of data. |
+| **Scalability with respect to changes in structure** | Extremely difficult to change the structure of records when **attributes are added or removed**. | Attributes can be **added or removed easily** using simple SQL queries. |
+| **Time of Execution** | Operations generally take **seconds**. | Operations generally execute in **milliseconds**. |
+| **Persistence** | Data processed using temporary data structures must be **manually written back to files**. | Data persistence is ensured through **automatic, system-level mechanisms**. |
+| **Robustness** | Ensuring data robustness requires **manual implementation**. | **Backup, recovery, and restore** require minimal manual intervention. |
+| **Security** | Difficult to implement security in Python; mainly depends on **OS-level security**. | Provides **user-specific access control at the database level**. |
+| **Programmer's Productivity** | File-access operations require extensive coding to ensure **persistence, robustness, and security**. | **Standard built-in queries** reduce coding effort and increase programmer productivity. |
+| **Arithmetic Operations** | Provides **easy arithmetic computations**. | Provides a **limited set of built-in arithmetic operations**. |
+| **Cost** | Generally **low cost** for hardware, software, and human resources. | Generally **higher cost** for hardware, software and human resources. |
+---

@@ -21,5 +21,3 @@ Tech Stack:
 - PostgreSQL
 - pgAdmin 4
 - SQL
-
-Status: Learning in progress ✅

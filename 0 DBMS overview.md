@@ -225,7 +225,32 @@ An **instance** is the **actual content of a database at a particular point in t
 | 917322 | Savings | 4.0% | 5000 | 7812 |
 | 372912 | Current | 0.0% | 0 | 291820 |
 | 827183 | Term Deposit | 6.75% | 10000 | 100000 |
-
-> **Easy to remember:**  
+ 
 > **Schema = Structure of the database**  
 > **Instance = Actual data at a particular point in time**
+
+## Physical Data Independence
+
+**Physical Data Independence** is the ability to **modify the physical schema without changing the logical schema**.
+
+- It is analogous to the separation of **interface and implementation** in Object-Oriented Systems.
+- Applications depend on the **logical schema**, not on the physical storage details.
+- The interfaces between different **levels and components** of the database should be clearly defined.
+- This ensures that changes made at one level **do not significantly affect other levels**.
+
+## Data Models
+
+A **Data Model** is a collection of tools used to describe **data, relationships among data, data semantics, and data constraints**.
+
+### Types of Data Models
+- **Relational Model** – Represents data using tables.
+- **Entity-Relationship (ER) Model** – Mainly used for **database design**.
+- **Object-Based Data Models** – Includes **Object-Oriented** and **Object-Relational** models.
+- **Older Data Models:**
+  - **Network Model**
+  - **Hierarchical Model**
+- **Recent Models for Semi-Structured and Unstructured Data:**
+  - Data can be converted into **easily manageable formats**.
+  - **Content Addressable Storage (CAS)** with metadata descriptors.
+  - **XML format**.
+  - **RDBMS supporting BLOBs (Binary Large Objects)**.

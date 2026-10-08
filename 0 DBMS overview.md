@@ -304,8 +304,6 @@ CREATE TABLE instructor (
     - Who can access what
 
 ## Data Manipution Language (DML)
-# Data Manipulation Language (DML)
-
 - Language for accessing and manipulating the data organized by the appropriate data model
   - DML: also known as **Query Language**
 - Two classes of languages
@@ -315,3 +313,26 @@ CREATE TABLE instructor (
     - Domain relational calculus
   - **Commercial** – used in commercial systems
     - **SQL** is the most widely used commercial language
+
+---
+
+## SQL
+- The most widely used commercial language
+- **SQL is NOT a Turing Machine equivalent language**
+  - Cannot be used to solve all problems that a C program, for example, can solve
+- To be able to compute complex functions, SQL is usually embedded in some **higher-level language**
+- Application programs generally access databases through one of:
+  - **Language extensions** to allow embedded SQL
+  - **Application Programming Interface or API** (for example, ODBC/JDBC) which allow SQL queries to be sent to a database
+ 
+## Database Design
+
+The process of designing the general structure of the database:
+
+- **Logical Design** – Deciding on the database schema. Database design requires that we find a **good** collection of relation schema
+  - Business decision
+    - What attributes should we record in the database?
+  - Computer Science decision
+    - What relation schemas should we have and how should the attributes be distributed among the various relation schemas?
+
+- **Physical Design** – Deciding on the physical layout of the database

@@ -310,7 +310,7 @@ CREATE TABLE instructor (
   - DML: also known as **Query Language**
 - Two classes of languages
   - **Pure** – used for proving properties about computational power and for optimization
-    - **Relational Algebra** (we focus in this course)
+    - **Relational Algebra**
     - Tuple relational calculus
     - Domain relational calculus
   - **Commercial** – used in commercial systems

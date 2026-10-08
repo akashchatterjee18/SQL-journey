@@ -94,4 +94,64 @@ As the **volume and complexity of data increased**, traditional filesystems and 
 - **Limited Access Control:** It is difficult to centrally assign **different permissions to different users**.
 - **System Failure:** A system crash can result in **significant or catastrophic data loss**.
 
-> **Key Point:** These limitations created the need for a comprehensive platform specifically designed to manage data, leading to the development of **Database Management Systems (DBMS)**.
+## History of Database Systems
+
+### 1950s and Early 1960s
+- Data processing primarily used **magnetic tapes** for storage.
+- Tapes supported only **sequential access** to data.
+- **Punched cards** were used for input.
+
+### Late 1960s and 1970s
+- **Hard disks** enabled direct/random access to data.
+- **Network and hierarchical data models** became widely used.
+- **Ted Codd** introduced the **relational data model**.
+  - He later received the **ACM Turing Award** for this work.
+  - **IBM Research** began the **System R** prototype.
+  - **UC Berkeley** began the **Ingres** prototype.
+- High-performance **transaction processing** became possible.
+
+### 1980s
+- Relational database research evolved into **commercial database systems**.
+- **SQL** became an industry standard.
+- **Parallel and distributed database systems** emerged.
+- **Object-oriented database systems** were developed.
+
+### 1990s
+- Growth of **decision-support and data-mining applications**.
+- Development of large **multi-terabyte data warehouses**.
+- Emergence of **Web commerce**.
+
+### Early 2000s
+- **XML and XQuery** standards emerged.
+- **Database administration became increasingly automated**.
+
+### Late 2000s
+- Emergence of **large-scale data storage systems**, including systems such as **Google BigTable, Yahoo PNuts, and Amazon's large-scale storage technologies**.
+
+---
+
+## Case Study: A Bank Transaction
+
+### Banking Transaction System
+
+Consider a simple **banking transaction system** where a person can **open a new account, transfer funds to an existing account, and view the history of all transactions** made so far.
+
+The application performs the following checks:
+
+- **Insufficient Balance:** If the account does not have enough balance, the system **does not allow the fund transfer**.
+- **Invalid Account Number:** If the account numbers are incorrect, the system **displays an error message and terminates the transaction**.
+- **Successful Transaction:** If the transaction is successful, the system **prints a confirmation message**.
+
+We use the **banking transaction system** to compare the features of a **file-based implementation** (using spreadsheets/`.csv` files) with a **DBMS-based implementation**.
+
+### Data Storage
+
+- **Account Details:**
+  - `Accounts.csv` → Used in the **file-based implementation**
+  - `Accounts` table → Used in the **DBMS implementation**
+
+- **Transaction Details:**
+  - `Ledger.csv` → Used in the **file-based implementation**
+  - `Ledger` table → Used in the **DBMS implementation**
+
+The following sections use a **fund transfer transaction** to compare how the same operation is handled in a file-based system versus a DBMS.

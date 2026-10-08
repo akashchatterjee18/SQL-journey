@@ -416,15 +416,78 @@ To remove the redundancy, the relation can be divided into two relations:
 
 ---
 
+## Design Approaches
 
+- Need to come up with a **methodology** to ensure that each relation in the database is **good**.
 
+- Two ways of doing so:
+  - **Entity Relationship Model**
+    - Models an enterprise as a collection of **entities and relationships**.
+    - Represented diagrammatically by an **Entity-Relationship Diagram (ER Diagram)**.
+    
+  - **Normalization Theory**
+    - Formalizes what designs are **bad** and provides methods to **test for them**.
 
+## Object-Relational Data Models
 
+- **Relational Model**
+  - Uses **flat, atomic values**.
 
+- **Object-Relational Data Models**
+  - Extend the relational data model by including **object orientation** and constructs to deal with **additional data types**.
+  - Allow attributes of tuples to have **complex types**, including non-atomic values such as **nested relations**.
+  - Preserve relational foundations, particularly **declarative access to data**, while extending **modeling power**.
+  - Provide **upward compatibility** with existing relational languages.
 
+## XML: Extensible Markup Language
 
+- Defined by the **World Wide Web Consortium (W3C)**.
+- Originally intended as a **document markup language**, not a database language.
+- The ability to specify **new tags** and create **nested tag structures** made XML a great way to exchange data, not just documents.
+- XML has become the basis for many **new-generation data interchange formats**.
+- A wide variety of tools is available for **parsing, browsing, and querying XML documents/data**.
 
+---
 
+## Database Engine
+
+- **Storage Manager**
+- **Query Processing**
+- **Transaction Manager**
+
+## Storage Management
+
+- **Storage Manager**
+  - A program module that provides the interface between the **low-level data stored in the database** and the **application programs and queries** submitted to the system.
+
+- The Storage Manager is responsible for:
+  - Interaction with the **OS file manager**.
+  - **Efficiently storing, retrieving, and updating data**.
+
+- **Issues:**
+  - Storage access
+  - File organization
+  - Indexing and hashing
+ 
+  ## Query Processing
+
+Query processing consists of three main steps:
+
+### a) Parsing and Translation
+
+- The **query** is parsed and translated into a **relational-algebra expression**.
+
+### b) Optimization
+
+- The relational-algebra expression is analysed and an efficient **execution plan** is generated.
+- The optimizer uses **statistics about the data** to choose the best execution plan.
+
+### c) Evaluation
+
+- The **execution plan** is executed by the **evaluation engine**.
+- The evaluation engine accesses the **data** and produces the **query output**.
+
+<img width="473" height="265" alt="image" src="https://github.com/user-attachments/assets/f00a1722-76d6-4f1f-9151-f37d7dc109ef" />
 
 
 

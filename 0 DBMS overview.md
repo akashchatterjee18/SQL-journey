@@ -254,3 +254,51 @@ A **Data Model** is a collection of tools used to describe **data, relationships
   - **Content Addressable Storage (CAS)** with metadata descriptors.
   - **XML format**.
   - **RDBMS supporting BLOBs (Binary Large Objects)**.
+---
+
+## Relational Model
+
+The **Relational Model** is a data model that represents data in the form of **tables (relations)** consisting of **rows and columns**.
+
+- **Table (Relation):** Represents a collection of related data.
+- **Row (Tuple):** Represents a single record in a table.
+- **Column (Attribute):** Represents a property or characteristic of the data.
+- **Domain:** Defines the set of valid values that an attribute can take.
+- **Primary Key:** Uniquely identifies each row in a table.
+- **Foreign Key:** Establishes a relationship between tables by referring to the primary key of another table.
+- **Constraints:** Rules used to maintain **data integrity and consistency**.
+
+### Example
+
+| Student_ID | Name | Course |
+|---:|---|---|
+| 101 | Rahul | CSE |
+| 102 | Aman | AIML |
+
+Here:
+- `Student` → **Relation/Table**
+- Each record → **Tuple/Row**
+- `Student_ID`, `Name`, `Course` → **Attributes/Columns**
+- `Student_ID` → **Primary Key**
+
+## Data Definition Language (DDL)
+
+- Specification notation for defining the database schema
+  - Example:
+
+```sql
+CREATE TABLE instructor (
+    ID char(5),
+    name varchar(20),
+    dept_name varchar(20),
+    salary numeric(8,2)
+);
+```
+
+- DDL compiler generates a set of table templates stored in a **data dictionary**
+- Data dictionary contains **metadata** (that is, data about data)
+  - Database schema
+  - Integrity constraints
+    - Primary key (ID uniquely identifies instructors)
+  - Authorization
+    - Who can access what

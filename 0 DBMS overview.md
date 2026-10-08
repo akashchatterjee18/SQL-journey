@@ -133,13 +133,42 @@ As the **volume and complexity of data increased**, traditional filesystems and 
 
 | **Parameter** | **File Handling via Python or any other language** | **DBMS** |
 |---|---|---|
-| **Scalability with respect to amount of data** | Very difficult to handle **insertion, updating, and querying** of large amounts of data. | Built-in features provide **high scalability** for large volumes of data. |
-| **Scalability with respect to changes in structure** | Extremely difficult to change the structure of records when **attributes are added or removed**. | Attributes can be **added or removed easily** using simple SQL queries. |
-| **Time of Execution** | Operations generally take **seconds**. | Operations generally execute in **milliseconds**. |
-| **Persistence** | Data processed using temporary data structures must be **manually written back to files**. | Data persistence is ensured through **automatic, system-level mechanisms**. |
-| **Robustness** | Ensuring data robustness requires **manual implementation**. | **Backup, recovery, and restore** require minimal manual intervention. |
-| **Security** | Difficult to implement security in Python; mainly depends on **OS-level security**. | Provides **user-specific access control at the database level**. |
+| **Scalability with respect to amount of data*** | Very difficult to handle **insertion, updating, and querying** of large amounts of data. | Built-in features provide **high scalability** for large volumes of data. |
+| **Scalability with respect to changes in structure*** | Extremely difficult to change the structure of records when **attributes are added or removed**. | Attributes can be **added or removed easily** using simple SQL queries. |
+| **Time of Execution*** | Operations generally take **seconds**. | Operations generally execute in **milliseconds**. |
+| **Persistence*** | Data processed using temporary data structures must be **manually written back to files**. | Data persistence is ensured through **automatic, system-level mechanisms**. |
+| **Robustness*** | Ensuring data robustness requires **manual implementation**. | **Backup, recovery, and restore** require minimal manual intervention. |
+| **Security*** | Difficult to implement security in Python; mainly depends on **OS-level security**. | Provides **user-specific access control at the database level**. |
 | **Programmer's Productivity** | File-access operations require extensive coding to ensure **persistence, robustness, and security**. | **Standard built-in queries** reduce coding effort and increase programmer productivity. |
 | **Arithmetic Operations** | Provides **easy arithmetic computations**. | Provides a **limited set of built-in arithmetic operations**. |
 | **Cost** | Generally **low cost** for hardware, software, and human resources. | Generally **higher cost** for hardware, software and human resources. |
 ---
+
+
+### 1. Scalability
+
+| **Aspect** | **File Handling via Python** | **DBMS** |
+|---|---|---|
+| **Number of Records** | As the number of records increases, the efficiency of flat files decreases because of increased search time and limitations of the OS in handling huge files. | Databases are designed to efficiently scale when the number of records increases drastically. Built-in mechanisms such as **indexing** provide quick access to the required data. |
+| **Structural Change** | To add an attribute, the program must initialise the new attribute for every record with a default value. Removing an attribute makes it difficult to detect and maintain relationships between entities. | When adding an attribute, a **default value** can be defined for all existing records. During deletion, constraints can prevent removal or ensure its safe removal. |
+
+---
+
+### 2. Time of Execution
+
+| **Aspect** | **File Handling via Python** | **DBMS** |
+|---|---|---|
+| **Implementation Effort** | The effort required to implement a file handler is relatively **low** in Python. | Installing and configuring a database server is **expensive and time-consuming**. |
+| **Processing Time** | Processing a **1 GB file** typically takes a few **seconds**. | Processing a **1 GB file** using an SQL query typically takes a few **milliseconds**. |
+| **Small Number of Records** | More suitable because there is little setup overhead. | Database installation and configuration overhead may be greater than the time advantage gained from query execution. |
+| **Large Number of Records** | Processing time increases significantly as the number of records becomes very large. | Database setup time becomes negligible compared with the performance advantage of using SQL queries on large datasets. |
+
+---
+
+### 3. Persistence, Robustness & Security
+
+| **Parameter** | **File Handling via Python** | **DBMS** |
+|---|---|---|
+| **Persistence** | Data processed using in-memory structures remains in memory and must be **manually written back** to the file after updates. | Data persistence is ensured through **automatic system mechanisms**, reducing the risk of data loss due to manual errors. |
+| **Robustness** | Consistency, reliability, and data integrity must be ensured **manually through multiple checks**. A system crash may cause inconsistency or data loss. | **Backup, recovery, and restore** require minimal manual intervention. Automatic recovery can be configured for system crashes. |
+| **Security** | Granular security is extremely difficult to implement in file systems. Authentication is generally handled at the **OS level**. | DBMS provides **user-specific access control at the database level**, allowing restrictions on who can view or access data. |

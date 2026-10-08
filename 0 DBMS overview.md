@@ -326,9 +326,7 @@ CREATE TABLE instructor (
   - **Application Programming Interface or API** (for example, ODBC/JDBC) which allow SQL queries to be sent to a database
  
 ## Database Design
-
 The process of designing the general structure of the database:
-
 - **Logical Design** – Deciding on the database schema. Database design requires that we find a **good** collection of relation schema
   - Business decision
     - What attributes should we record in the database?
@@ -336,3 +334,109 @@ The process of designing the general structure of the database:
     - What relation schemas should we have and how should the attributes be distributed among the various relation schemas?
 
 - **Physical Design** – Deciding on the physical layout of the database
+---
+
+## Case Study
+
+> **Is there any problem with this relation?**
+
+| ID | name | salary | dept_name | building | budget |
+|---:|---|---:|---|---|---:|
+| 22222 | Einstein | 95000 | Physics | Watson | 70000 |
+| 12121 | Wu | 90000 | Finance | Painter | 120000 |
+| 32343 | El Said | 60000 | History | Painter | 50000 |
+| 45565 | Katz | 75000 | Comp. Sci. | Taylor | 100000 |
+| 98345 | Kim | 80000 | Elec. Eng. | Taylor | 85000 |
+| 76766 | Crick | 72000 | Biology | Watson | 90000 |
+| 10101 | Srinivasan | 65000 | Comp. Sci. | Taylor | 100000 |
+| 58583 | Califieri | 62000 | History | Painter | 50000 |
+| 83821 | Brandt | 92000 | Comp. Sci. | Taylor | 100000 |
+| 15151 | Mozart | 40000 | Music | Packard | 80000 |
+| 33456 | Gold | 87000 | Physics | Watson | 70000 |
+| 76543 | Singh | 80000 | Finance | Painter | 120000 |
+
+### Redundancy
+
+**Redundancy** means storing the **same information repeatedly**.
+
+In this relation:
+
+- dept_name → building, budget
+- So, the **building and budget of a department** are repeated for every employee in that department.
+
+For example:
+
+- Comp. Sci. → Taylor, 100000 is repeated for **Katz, Srinivasan, and Brandt**.
+- Physics → Watson, 70000 is repeated for **Einstein and Gold**.
+- Finance → Painter, 120000 is repeated for **Wu and Singh**.
+
+> So, this is **not a good database design** because it causes **data redundancy** and can lead to **update, insertion, and deletion anomalies**.
+
+### Decomposition
+
+To remove the redundancy, the relation can be divided into two relations:
+
+#### (a) The Instructor Table
+
+| ID | name | dept_name | salary |
+|---:|---|---|---:|
+| 22222 | Einstein | Physics | 95000 |
+| 12121 | Wu | Finance | 90000 |
+| 32343 | El Said | History | 60000 |
+| 45565 | Katz | Comp. Sci. | 75000 |
+| 98345 | Kim | Elec. Eng. | 80000 |
+| 76766 | Crick | Biology | 72000 |
+| 10101 | Srinivasan | Comp. Sci. | 65000 |
+| 58583 | Califieri | History | 62000 |
+| 83821 | Brandt | Comp. Sci. | 92000 |
+| 15151 | Mozart | Music | 40000 |
+| 33456 | Gold | Physics | 87000 |
+| 76543 | Singh | Finance | 80000 |
+
+#### (b) The Department Table
+
+| dept_name | building | budget |
+|---|---|---:|
+| Comp. Sci. | Taylor | 100000 |
+| Biology | Watson | 90000 |
+| Elec. Eng. | Taylor | 85000 |
+| Music | Packard | 80000 |
+| Finance | Painter | 120000 |
+| History | Painter | 50000 |
+| Physics | Watson | 70000 |
+
+### Explanation
+
+- The **Instructor table** stores information specific to each instructor.
+- The **Department table** stores information specific to each department.
+- dept_name acts as the **key** of the Department table.
+- The Instructor table contains dept_name as a **foreign key** referencing the Department table.
+- This decomposition removes the repeated building and budget values.
+- Therefore, **redundancy is reduced and update anomalies are avoided**.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

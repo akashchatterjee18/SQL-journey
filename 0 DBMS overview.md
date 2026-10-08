@@ -302,3 +302,16 @@ CREATE TABLE instructor (
     - Primary key (ID uniquely identifies instructors)
   - Authorization
     - Who can access what
+
+## Data Manipution Language (DML)
+# Data Manipulation Language (DML)
+
+- Language for accessing and manipulating the data organized by the appropriate data model
+  - DML: also known as **Query Language**
+- Two classes of languages
+  - **Pure** – used for proving properties about computational power and for optimization
+    - **Relational Algebra** (we focus in this course)
+    - Tuple relational calculus
+    - Domain relational calculus
+  - **Commercial** – used in commercial systems
+    - **SQL** is the most widely used commercial language

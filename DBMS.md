@@ -25,3 +25,7 @@ Electronic Data or Records Management advances alongside developments in technol
 - **1990s:** With the **Internet**, data management started becoming global.
 - **2000s:** **E-commerce** boomed, and **NoSQL** was introduced for managing unstructured data.
 - **2010s:** **Data Science** started gaining significant importance.
+
+### Electronic Data Management Parameters
+
+**Electronic Data or Records Management** depends on several important parameters that determine the quality and reliability of data management, including **durability, scalability, security, retrieval, ease of use, consistency, efficiency, cost and more**.
